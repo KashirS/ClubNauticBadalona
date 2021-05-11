@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "360613382762",
+    "firebase_url": "https://deepapnea-3e2f2-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "deepapnea-3e2f2",
+    "storage_bucket": "deepapnea-3e2f2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:360613382762:android:2f6f5e01037bc2774e1813",
+        "android_client_info": {
+          "package_name": "itb.cat.clubnauticbadalona"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "360613382762-s7jhagfoc4c8v0b12ov1la5q4vilgv5g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFTKuyzVXGSUL8RSkdCyxQrdGKWG1JmGg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "360613382762-s7jhagfoc4c8v0b12ov1la5q4vilgv5g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:360613382762:android:0561b7376d9687cc4e1813",
+        "android_client_info": {
+          "package_name": "itb.cat.deepapnea"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "360613382762-s7jhagfoc4c8v0b12ov1la5q4vilgv5g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFTKuyzVXGSUL8RSkdCyxQrdGKWG1JmGg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "360613382762-s7jhagfoc4c8v0b12ov1la5q4vilgv5g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

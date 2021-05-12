@@ -3,12 +3,158 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.LoginFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical"
+        android:alpha="0.3"
+        android:background="@color/colorPrimary" />
+    <LinearLayout
+    android:layout_width="372dp"
+    android:layout_height="522dp"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:background="@color/colorAccent" />
+    <LinearLayout
+        android:layout_width="360dp"
+        android:layout_height="510dp"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:alpha="0.3"
+        android:background="@color/colorPrimary" />
 
+    <RelativeLayout
+        android:layout_width="350dp"
+        android:layout_height="500dp"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:background="@color/colorPrimary"
+        >
+
+        <ImageView
+            android:id="@+id/app_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="75dp"
+            android:src="@drawable/app_logo"
+            android:layout_centerHorizontal="true"
+            />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/user_name_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:layout_marginBottom="10sp"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
+            android:hint="Phone number, username, or email"
+            android:layout_below="@+id/app_logo"
+            app:boxBackgroundColor="@color/colorWhite"
+            tools:ignore="MissingClass">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/user_name_login_editext"
+                android:fontFamily="@font/droidsans"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text=""
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/user_password_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10sp"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_below="@+id/user_name_login"
+            app:boxBackgroundColor="@color/colorWhite"
+            app:passwordToggleEnabled="true"
+            android:hint="Password"
+            tools:ignore="MissingClass">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/user_password_login_editext"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/droidsans"
+                android:text=""
+                android:inputType="textPassword"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/login_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10sp"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_below="@+id/user_password_login"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:text="Log In"
+            android:textColor="@color/colorWhite"
+            android:fontFamily="@font/droidsans"
+            />
+        <TextView
+            android:id="@+id/lost_password_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¿Has olvidado tus datos de inicio de sesión?"
+            android:layout_gravity="center"
+            android:textSize="12dp"
+            android:textColor="@color/colorWhite"
+            android:layout_below="@+id/login_button"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/droidsansbold"
+            />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/help_button_login"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="Pulsa aquí"
+            android:textStyle="bold"
+            android:textColor="@color/colorWhite"
+            android:textSize="10sp"
+            android:layout_below="@+id/lost_password_text"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:fontFamily="@font/droidsansbold"
+            />
+        <LinearLayout
+            android:layout_below="@+id/help_button_login"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom"
+            android:gravity="center"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¿No tienes una cuenta?"
+                android:textSize="12dp"
+                android:fontFamily="@font/droidsansbold"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/register_button_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Registrate"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold"
+                android:textSize="10dp"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:fontFamily="@font/droidsansbold"
+                />
+        </LinearLayout>
+    </RelativeLayout>
 </FrameLayout>

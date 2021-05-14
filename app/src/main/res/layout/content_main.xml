@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout android:id="@+id/drawerlayout"
+<androidx.drawerlayout.widget.DrawerLayout
+    android:id="@+id/drawerlayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:openDrawer="start"
@@ -23,14 +24,14 @@
         android:id="@+id/coordinator_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fitsSystemWindows="true"
-        android:visibility="invisible">
+        android:visibility="invisible"
+        >
         <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/top_appbar_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/Widget.MaterialComponents.ActionBar.PrimarySurface"
-            android:fitsSystemWindows="true">
-
+            >
             <com.google.android.material.appbar.MaterialToolbar
                 android:id="@+id/top_appbar"
                 android:layout_width="match_parent"
@@ -52,8 +53,7 @@
         app:itemTextColor="@color/colorWhite"
         app:menu="@menu/navigation_drawer"
         app:itemIconPadding="10dp"
-        android:layout_gravity="start"
-        android:visibility="invisible">
+        android:layout_gravity="start">
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -63,8 +63,7 @@
                     android:layout_alignParentBottom="true"
                     android:text="Configuration"
                     app:icon="@drawable/setting_icon"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    />
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox" />
             </RelativeLayout>
     </com.google.android.material.navigation.NavigationView>
 

@@ -1,11 +1,15 @@
 package cat.itb.clubnauticbadalona.activities;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -17,12 +21,18 @@ import com.google.android.material.navigation.NavigationView;
 
 import cat.itb.clubnauticbadalona.R;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
+import static cat.itb.clubnauticbadalona.R.drawable.menu_icon;
 
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+
+    private DrawerLayout drawerLayout;
     static NavigationView view;
-    NavController navController;
-    MenuItem menu_icon;
-    MaterialToolbar materialToolbar;
+    private NavController navController;
+    private MenuItem menu_icon;
+    public static MaterialToolbar materialToolbar;
+    public static CoordinatorLayout coordinatorLayout;
+    private ActionBarDrawerToggle actionBarDrawerToggle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,28 +42,47 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
         navController = navHostFragment.getNavController();
-       view = findViewById(R.id.navigation_view);
-       view.setNavigationItemSelectedListener(this);
-       hideNavDrawer();
-       materialToolbar = findViewById(R.id.top_appbar);
-       materialToolbar.setOnClickListener(this::onClick);
-    }
-    public static void showNavDrawer(){
-        view.setVisibility(View.VISIBLE);
-    }
-    public static void hideNavDrawer(){
-        view.setVisibility(View.INVISIBLE);
-    }
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        return false;
+        view = findViewById(R.id.navigation_view);
+        materialToolbar = findViewById(R.id.top_appbar);
+        coordinatorLayout = findViewById(R.id.coordinator_layout);
+        setSupportActionBar(materialToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+
+
+        materialToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                actionBarDrawerToggle = new ActionBarDrawerToggle(MainActivity.this,drawerLayout,R.string.app_name,R.string.app_name);
+                actionBarDrawerToggle.syncState();
+            }
+        });
     }
 
     @Override
-    public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.top_appbar:
-                showNavDrawer();
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (actionBarDrawerToggle.onOptionsItemSelected(item)){
+            return true;
         }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void setActionBar(MaterialToolbar materialToolbar) {
+        
+    }
+
+    public static void showNavDrawer(){
+        materialToolbar.setVisibility(View.VISIBLE);
+        coordinatorLayout.setVisibility(View.VISIBLE);
+    }
+    public static void hideNavDrawer(){
+        materialToolbar.setVisibility(View.INVISIBLE);
+        coordinatorLayout.setVisibility(View.INVISIBLE);
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        return false;
     }
 }

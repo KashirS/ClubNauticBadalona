@@ -12,12 +12,10 @@ import android.view.ViewGroup;
 import com.google.android.material.navigation.NavigationView;
 
 import cat.itb.clubnauticbadalona.R;
+import cat.itb.clubnauticbadalona.activities.MainActivity;
 
 
 public class HomeFragment extends Fragment {
-
-    CoordinatorLayout coordinatorLayout;
-    NavigationView navigationView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -29,12 +27,8 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_home, container, false);
-
-        coordinatorLayout = v.findViewById(R.id.coordinator_layout);
-        showCoordinator();
+        MainActivity.showNavDrawer();
         return v;
     }
-    public void showCoordinator(){
-        coordinatorLayout.setVisibility(View.VISIBLE);
-    }
+
 }
